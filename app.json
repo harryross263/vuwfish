@@ -1,0 +1,8 @@
+{
+  "name": "Vuwfish",
+  "description": "Homepage for the Victoria University of Wellington Fishing Club (VUWFISH)",
+  "repository": "https://github.com/heroku/vuwfish",
+  "logo": "",
+  "keywords": ["node", "express", "static"],
+  "image": "app/image"
+}

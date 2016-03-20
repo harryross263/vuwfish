@@ -1,0 +1,31 @@
+{
+  "name": "Vuwfish",
+  "authors": [
+    "Harry Ross <harryross263@gmail.com>"
+  ],
+  "description": "Home page for the Victoria University of Wellington fishing club (Vuwfish).",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Victoria",
+    "University",
+    "of",
+    "Wellington",
+    "Fishing",
+    "Club",
+    "VUWSA"
+  ],
+  "license": "MIT",
+  "homepage": "vuwfish.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1"
+  }
+}

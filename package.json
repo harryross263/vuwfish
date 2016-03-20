@@ -1,0 +1,29 @@
+{
+  "name": "vuwfish",
+  "version": "1.0.0",
+  "description": "Homepage for the Victoria University of Wellington Fishing Club (VUWFISH)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/harryross263/vuwfish.git"
+  },
+  "keywords": [
+    "Fishing",
+    "club",
+    "'Victoria",
+    "University'"
+  ],
+  "author": "Harry Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harryross263/vuwfish/issues"
+  },
+  "homepage": "https://github.com/harryross263/vuwfish#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
