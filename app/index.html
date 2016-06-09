@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <head>
-	<title>VUWFISH Est. 2016</title>
+	<title>VUWFISH</title>
 	<meta name="description" content="Home to the Victoria University of Wellington Fishing Club (VUWFISH)">
 	<meta name="keywords" content="VUWFISH, Fishing, Club, Wellington">
 	<meta name="author" content="Harry Ross">
+	<link rel="icon" href="img/favicon.ico">
 	<style>
 	* { margin:0; padding:0; }
 	html, body { width:100%; height:100%; }
+	div { display: block; }
 	body { background-image: url("img/vuwfish.jpg"); background-repeat: no-repeat; background-position: center; }
 	canvas { display:block; }
+	#recent-work { position: fixed; right: 90px; bottom: 90px; font: 500 21px/24px 'Helvetica Neue', Sans-Serif; z-index: 900; color: #000;}
+	a { text-decoration: none; border-bottom: 1px solid rgba(0, 0, 0, 0.1); color: #000; }
+	ol, ul { list-style: none; }
+	img { position: fixed; z-index: 900; }
 	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="js/fish.js"></script>
 	<script type="text/javascript" src="js/paper-full.min.js"></script>
 	<script type="text/paperscript" canvas="canvas-1">
 		// Code ported to Paper.js from http://the389.com/9/1/
@@ -125,6 +133,19 @@
 	</script>
 </head>
 <body>
+	<div id="recent-work">
+            <h3 class="small">With thanks to:</h3>
+            <ul>
+                <li><a href="https://www.thechippery.co.nz/" target="_blank">The Chippery</a></li>
+                <li><a href="http://www.stevesfishingshop.co.nz/store/" target="_blank">Steve's Fishing Shop</a></li>
+            </ul>
+    </div>
+
+    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 90px">
+    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 130px">
+    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 200px">
+    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 20px">
+
 	<div class="canvas">
 		<canvas resize="true" width="761" height="701" hidpi="off" id="canvas-1" data-paper-scope="1" style="-webkit-user-drag: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
 	</div>
