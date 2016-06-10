@@ -21,13 +21,13 @@
 	<script type="text/javascript" src="js/movedemfish.js"></script>
 	<script type="text/javascript">
 		$('#body').focus();
-		// $(window).keypress(function (e) {
-		// 	if (e.which == 0 || e.which == 32) {
-		// 		e.preventDefault();
-		// 		$("#canvas-wrapper").fadeToggle(1000);
-		// 		$(".fish").fadeToggle(1000);
-		// 	}
-		// });
+		$(window).keypress(function (e) {
+			if (e.which == 0 || e.which == 32) {
+				e.preventDefault();
+				$("#canvas-wrapper").fadeToggle(1000);
+				$(".fish").fadeToggle(1000);
+			}
+		});
 	</script>
 	<script type="text/paperscript" canvas="canvas-1">
 		// Code ported to Paper.js from http://the389.com/9/1/
