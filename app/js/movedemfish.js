@@ -6,12 +6,8 @@ $(document).ready(function() {
 		});
 	}
 
-	// $("#toggle").click(function () {
-	// 	$("#canvas-wrapper").fadeToggle(1000);
-	// 	$(".fish").fadeToggle(1000);
-	// });
-	$("#canvas-wrapper").focus();
-	
+	$(window).focus();
+
 	$(window).keypress(function (e) {
 		if (e.which == 0 || e.which == 32) {
 			e.preventDefault();
