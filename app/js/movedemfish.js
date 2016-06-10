@@ -11,5 +11,13 @@ $(document).ready(function() {
 		$(".fish").fadeToggle(1000);
 	});
 
+	$(window).keypress(function (e) {
+		if (e.which == 0 || e.which == 32) {
+			e.preventDefault();
+			$("#canvas-wrapper").fadeToggle(1000);
+			$(".fish").fadeToggle(1000);
+		}
+	});
+
 	justKeepSwimming();
 });
