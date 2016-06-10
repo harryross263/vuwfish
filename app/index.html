@@ -20,13 +20,13 @@
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
 	<script type="text/javascript" src="js/movedemfish.js"></script>
 	<script type="text/javascript">
-		$(window).keypress(function (e) {
-			if (e.which == 0 || e.which == 32) {
-				e.preventDefault();
-				$("#canvas-wrapper").fadeToggle(1000);
-				$(".fish").fadeToggle(1000);
-			}
-		});
+		// $(window).keypress(function (e) {
+		// 	if (e.which == 0 || e.which == 32) {
+		// 		e.preventDefault();
+		// 		$("#canvas-wrapper").fadeToggle(1000);
+		// 		$(".fish").fadeToggle(1000);
+		// 	}
+		// });
 	</script>
 	<script type="text/paperscript" canvas="canvas-1">
 		// Code ported to Paper.js from http://the389.com/9/1/
@@ -141,7 +141,7 @@
 		}
 	</script>
 </head>
-<body id="toggle">
+<body id="body">
 	<div id="with-thanks">
             <h3 class="small">With thanks to:</h3>
             <ul>
