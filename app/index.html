@@ -106,7 +106,7 @@
 		}
 
 		function onFrame(event) {
-			updateWave(path);
+			updateWave(path); 
 		}
 
 		function updateWave(path) {
@@ -132,7 +132,7 @@
 		}
 	</script>
 </head>
-<body>
+<body id="toggle">
 	<div id="with-thanks">
             <h3 class="small">With thanks to:</h3>
             <ul>
@@ -144,7 +144,7 @@
     <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 48px">
     <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 5px">
 
-	<div class="canvas">
+	<div class="canvas" id="canvas-wrapper">
 		<canvas resize="true" width="761" height="701" hidpi="off" id="canvas-1" data-paper-scope="1" style="-webkit-user-drag: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
 	</div>
 

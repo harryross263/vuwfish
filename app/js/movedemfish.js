@@ -5,5 +5,11 @@ $(document).ready(function() {
 			$(this).animate({right: $(document).width()}, Math.random()*500 + 4000, "linear", justKeepSwimming).delay(Math.random()*1000);
 		});
 	}
+
+	$("#toggle").click(function () {
+		$("#canvas-wrapper").fadeToggle(1000);
+		$(".fish").fadeToggle(1000);
+	});
+
 	justKeepSwimming();
 });
