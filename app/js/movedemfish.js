@@ -6,10 +6,10 @@ $(document).ready(function() {
 		});
 	}
 
-	$("#toggle").click(function () {
-		$("#canvas-wrapper").fadeToggle(1000);
-		$(".fish").fadeToggle(1000);
-	});
+	// $("#toggle").click(function () {
+	// 	$("#canvas-wrapper").fadeToggle(1000);
+	// 	$(".fish").fadeToggle(1000);
+	// });
 
 	// $(window).keypress(function (e) {
 	// 	if (e.which == 0 || e.which == 32) {
