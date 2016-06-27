@@ -1,0 +1,57 @@
+/* Ya general design. */
+#logo { position: absolute; top: 50%; left: 50%; margin-top: -162px; /* Half the height */ margin-left: -183px; /* Half the width */}
+* { margin:0; padding:0; }
+html, body { width:100%; height:100%; font: 500 21px/24px 'Helvetica Neue', Sans-Serif; }
+canvas { display:block; }
+#horizontal-menu { position: fixed; left: 90px; top: 90px; z-index: 900; color: #000; }
+#vertical-menu { position: fixed; left: 10px; top: 10px; z-index: 900; columns: #000; display: none; }
+#with-thanks { position: absolute; right: 90px; bottom: 150px; z-index: 900; color: #000; display:block; }
+#fish-container { position: fixed; }
+a { text-decoration: none; border-bottom: 0.5px solid rgba(0, 0, 0, 0.1); color: #000; }
+ol, ul { list-style: none; }
+img { position: fixed; z-index: 900; }
+#info.active { color: #fff; }
+
+/* Treating out the small devices */
+/* small desktop */
+@media screen and (max-width:900px){
+	#horizontal-menu { display: none; }
+	#vertical-menu { display: block; }
+	#with-thanks { display: none; }
+}
+/* tablet */
+@media all and (max-width: 1024px) {
+	#with-thanks { right: 50px; }
+}
+/* mobile phone */
+@media all and (max-width: 768px) {
+	#horizontal-menu { display: none; }
+	#vertical-menu { display: block; }
+	#with-thanks { display: none; }
+}
+
+/* Slider styles. */
+#info{
+	background-color: #000;
+	color: #333333;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 200px 0;
+}
+#calendar{
+	background-color: #fff;
+	color: #333333;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 200px 0;
+}
+#contact{
+	background-color: #000;
+	color: #333333;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 200px 0;
+}

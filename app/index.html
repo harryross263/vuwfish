@@ -4,37 +4,10 @@
 	<meta name="description" content="Home to the Victoria University of Wellington Fishing Club (VUWFISH)">
 	<meta name="keywords" content="VUWFISH, Fishing, Club, Wellington">
 	<meta name="author" content="Harry Ross - github.com/harryross263">
-	<link rel="icon" href="img/favicon.ico">
-	<style>
-	#logo { position: absolute; top: 50%; left: 50%; margin-top: -162px; /* Half the height */ margin-left: -183px; /* Half the width */}
-	* { margin:0; padding:0; }
-	html, body { width:100%; height:100%; font: 500 21px/24px 'Helvetica Neue', Sans-Serif; }
-	canvas { display:block; }
-	#horizontal-menu { position: fixed; left: 90px; top: 90px; z-index: 900; color: #000; }
-	#vertical-menu { position: fixed; left: 10px; top: 10px; z-index: 900; columns: #000; display: none; }
-	#with-thanks { position: fixed; right: 90px; bottom: 150px; z-index: 900; color: #000; display:block; }
-	a { text-decoration: none; border-bottom: 0.5px solid rgba(0, 0, 0, 0.1); color: #000; }
-	ol, ul { list-style: none; }
-	img { position: fixed; z-index: 900; }
-	@media screen and (max-width:900px){
-		#horizontal-menu { display: none; }
-		#vertical-menu { display: block; }
-		#with-thanks { display: none; }
-    }
-/* tablet */
-@media all and (max-width: 1024px) {
-    #horizontal-menu { display: none; }
-		#vertical-menu { display: block; }
-		#with-thanks { display: none; }
-}
 
-/* mobile phone */
-@media all and (max-width: 768px) {
-    #horizontal-menu { display: none; }
-		#vertical-menu { display: block; }
-		#with-thanks { display: none; }
-}
-	</style>
+	<link rel="icon" href="img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/stylezzz.css">
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
 	<script type="text/javascript" src="js/movedemfish.js"></script>
@@ -50,10 +23,10 @@
 			count: 0
 		};
 		values.invMass = 1 / values.mass;
-
+	
 		var path, springs;
 		var size = view.size * [1.2, 1];
-
+	
 		var Spring = function(a, b, strength, restLength) {
 			this.a = a;
 			this.b = b;
@@ -61,12 +34,12 @@
 			this.strength = strength ? strength : 0.55;
 			this.mamb = values.invMass * values.invMass;
 		};
-
+	
 		Spring.prototype.update = function() {
 			var delta = this.b - this.a;
 			var dist = delta.length;
 			var normDistStrength = (dist - this.restLength) /
-					(dist * this.mamb) * this.strength;
+			(dist * this.mamb) * this.strength;
 			delta.y *= normDistStrength * values.invMass * 0.2;
 			if (!this.a.fixed){
 				this.a.y += delta.y;
@@ -75,7 +48,7 @@
 				this.b.y -= delta.y;
 			}
 		};
-
+	
 
 		function createPath(strength, pathHeight) {
 			var path = new Path({
@@ -106,33 +79,33 @@
 			size = view.bounds.size * [2, 1];
 			path = createPath(0.1, 0.8);
 		}
-
+		
 		function onMouseMove(event) {
-			// Don't track mouse movements in the top part of the DOM.
-			if (event.point.y < 250)
-				return;
-			var location = path.getNearestLocation(event.point);
-			var segment = location.segment;
-			var point = segment.point;
-
-			if (!point.fixed && location.distance < size.height / 4) {
-				var y = event.point.y;
-				point.y += (y - point.y) / 6;
-				if (segment.previous && !segment.previous.fixed) {
-					var previous = segment.previous.point;
-					previous.y += (y - previous.y) / 24;
-				}
-				if (segment.next && !segment.next.fixed) {
-					var next = segment.next.point;
-					next.y += (y - next.y) / 24;
-				}
+		// Don't track mouse movements in the top part of the DOM.
+		if (event.point.y < 250)
+			return;
+		var location = path.getNearestLocation(event.point);
+		var segment = location.segment;
+		var point = segment.point;
+		
+		if (!point.fixed && location.distance < size.height / 4) {
+			var y = event.point.y;
+			point.y += (y - point.y) / 6;
+			if (segment.previous && !segment.previous.fixed) {
+				var previous = segment.previous.point;
+				previous.y += (y - previous.y) / 24;
+			}
+			if (segment.next && !segment.next.fixed) {
+				var next = segment.next.point;
+				next.y += (y - next.y) / 24;
 			}
 		}
-
+		}
+		
 		function onFrame(event) {
 			updateWave(path); 
 		}
-
+		
 		function updateWave(path) {
 			var force = 1 - values.friction * values.timeStep * values.timeStep;
 			for (var i = 0, l = path.segments.length; i < l; i++) {
@@ -141,13 +114,13 @@
 				point.py = point.y;
 				point.y = Math.max(point.y + dy, 0);
 			}
-
+		
 			for (var j = 0, l = springs.length; j < l; j++) {
 				springs[j].update();
 			}
 			path.smooth({ type: 'continuous' });
 		}
-
+		
 		function onKeyDown(event) {
 			if (event.key == 'space') {
 				//path.fullySelected = !path.fullySelected;
@@ -156,43 +129,78 @@
 		}
 	</script>
 </head>
-<body id="body">
-	<div id="horizontal-menu">
-		<p><a href="#info">Info</a> - <a href="#calendar">Calendar</a> - <a href="#contact">Contact</a></p>
-	</div>
-	<div id="vertical-menu">
-		<p><a href="#info">Info</a><br><a href="#calendar">Calendar</a><br><a href="#contact">Contact</a></p>
-	</div>
-	<img src="img/vuwfish.png" id="logo">
-	<div id="with-thanks">
-            <h3 class="small">With thanks to:</h3>
-            <ul>
-                <li><a href="https://www.thechippery.co.nz/" target="_blank">The Chippery</a></li>
-                <li><a href="http://www.stevesfishingshop.co.nz/store/" target="_blank">Steve's Fishing Shop</a></li>
-            </ul>
-    </div>
+<body>
+	<div id="top">
+		<div id="horizontal-menu">
+			<p><a href="#info">Info</a> - <a href="#calendar">Calendar</a> - <a href="#contact">Contact</a></p>
+		</div>
+		<div id="vertical-menu">
+			<p><a href="#info">Info</a><br><a href="#calendar">Calendar</a><br><a href="#contact">Contact</a></p>
+		</div>
 
-    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 48px">
-    <img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 5px">
+		<!-- Background image. -->
+		<img src="img/vuwfish.png" id="logo">
 
-	<div class="canvas" id="canvas-wrapper">
-		<canvas resize="true" width="761" height="701" hidpi="off" id="canvas-1" data-paper-scope="1" style="-webkit-user-drag: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+		<div id="with-thanks">
+			<h3 class="small">With thanks to:</h3>
+			<ul>
+				<li><a href="https://www.thechippery.co.nz/" target="_blank">The Chippery</a></li>
+				<li><a href="http://www.stevesfishingshop.co.nz/store/" target="_blank">Steve's Fishing Shop</a></li>
+			</ul>
+		</div>
+
+		<!-- Wave canvas. -->
+		<div class="canvas" id="canvas-wrapper">
+			<canvas resize="true" width="761" height="701" hidpi="off" id="canvas-1" data-paper-scope="1" style="-webkit-user-drag: none; -webkit-user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas>
+		</div>
+
+		<!-- Fish. -->
+		<div id="fish-container">
+			<img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 48px">
+			<img src="img/fish.png" class="fish" width="50" height="50" style="bottom: 5px">
+		</div>
+	</div>
+	
+	<!-- Sliders -->
+	<div id="info">
+		<a name="info">Info</a>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<div id="calendar">
+		<a name="calendar">Calendar</a>
+	</div>
+
+	<div id="contact">
+		<a name="contact">Contact</a>
+	</div> 
+
 	<script type="text/javascript">
 		(function() {
 			var canvas = document.getElementById('canvas-1'),
-            context = canvas.getContext('2d');
+			context = canvas.getContext('2d');
 
-            window.addEventListener('resize', resizeCanvas, false);
+			window.addEventListener('resize', resizeCanvas, false);
 
-    		function resizeCanvas() {
-    			canvas.width = window.innerWidth;
-    			canvas.height = window.innerHeight;
-    		}
-    		resizeCanvas();
+			function resizeCanvas() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			resizeCanvas();
 
 		})();
+
+		$(document).ready(function(){
+			$('a[href^="#"]').on('click',function (e) {
+	    		e.preventDefault();
+
+	    		var target = this.hash;
+	    		var $target = $(target);
+
+	    		
+	    		$('html, body').stop().animate({
+	        		'scrollTop': $target.offset().top
+	    		}, 900);
+	    	});
+		});
 	</script>
 </body>
