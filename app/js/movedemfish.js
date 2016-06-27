@@ -16,10 +16,5 @@ $(document).ready(function() {
 		}
 	});
 
-	toggleWave = function() {
-		$('#canvas-wrapper').fadeToggle(1000);
-		$('.fish').fadeToggle(1000);
-	}
-
 	justKeepSwimming();
 });
