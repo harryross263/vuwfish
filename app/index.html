@@ -130,12 +130,13 @@
 	</script>
 </head>
 <body>
-	<div id="top">
+	<div id="home">
+		<a name="home"></a>
 		<div id="horizontal-menu">
-			<p><a href="#info">Info</a> - <a href="#calendar">Calendar</a> - <a href="#contact">Contact</a></p>
+			<p><a href="#home">Home</a> - <a href="#info">Info</a> - <a href="#calendar">Calendar</a> - <a href="#contact">Contact</a></p>
 		</div>
 		<div id="vertical-menu">
-			<p><a href="#info">Info</a><br><a href="#calendar">Calendar</a><br><a href="#contact">Contact</a></p>
+			<p><a href="#home">Home</a><br><a href="#info">Info</a><br><a href="#calendar">Calendar</a><br><a href="#contact">Contact</a></p>
 		</div>
 
 		<!-- Background image. -->
@@ -163,17 +164,16 @@
 	
 	<!-- Sliders -->
 	<div id="info">
-		<a name="info">Info</a>
+		<a name="info"></a>
 	</div>
 
 	<div id="calendar">
-		<a name="calendar">Calendar</a>
+		<a name="calendar"></a>
 	</div>
 
 	<div id="contact">
-		<a name="contact">Contact</a>
+		<a name="contact"></a>
 	</div> 
-
 	<script type="text/javascript">
 		(function() {
 			var canvas = document.getElementById('canvas-1'),
@@ -196,10 +196,18 @@
 	    		var target = this.hash;
 	    		var $target = $(target);
 
-	    		
 	    		$('html, body').stop().animate({
 	        		'scrollTop': $target.offset().top
-	    		}, 900);
+	        	}, 900, function() {
+	        		if (target == '#info' || target == '#contact') {
+	        			$('#horizontal-menu').find('*').addClass('active');
+	        			$('#vertical-menu').find('*').addClass('active');
+	        		} else {
+	        			$('#horizontal-menu').find('*').removeClass('active');
+	        			$('#vertical-menu').find('*').removeClass('active');
+	        		}
+	    		});
+
 	    	});
 		});
 	</script>

@@ -8,6 +8,9 @@ html, body {
 	height:100%;
 	font: 500 21px/24px 'Helvetica Neue', Sans-Serif;
 }
+body {
+	overflow: hidden;
+}
 canvas {
 	display:block;
 }
@@ -56,8 +59,11 @@ img {
 #fish-container {
 	position: fixed;
 }
-#info.active {
+.active {
 	color: #fff;
+}
+a.active {
+	border-bottom: 0.5px solid rgba(192, 192, 192, 0.6);
 }
 
 /* Treating out the small devices */
@@ -79,6 +85,14 @@ img {
 }
 
 /* Slider styles. */
+#home {
+	background-color: #fff;
+	color: #333333;
+	height: 300px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 200px 0;
+}
 #info{
 	background-color: #000;
 	color: #333333;
