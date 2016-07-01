@@ -9,7 +9,7 @@ html, body {
 	font: 500 21px/24px 'Helvetica Neue', Sans-Serif;
 }
 body {
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 canvas {
 	display: block;
