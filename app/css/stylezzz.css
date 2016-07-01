@@ -88,7 +88,7 @@ a.active {
 #home {
 	background-color: #fff;
 	color: #333333;
-	height: 300px;
+	height: 100vh;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 200px 0;
@@ -96,7 +96,7 @@ a.active {
 #info{
 	background-color: #000;
 	color: #333333;
-	height: 300px;
+	height: 100vh;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 200px 0;
@@ -104,7 +104,7 @@ a.active {
 #calendar{
 	background-color: #fff;
 	color: #333333;
-	height: 300px;
+	height: 100vh;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 200px 0;
@@ -112,7 +112,7 @@ a.active {
 #contact{
 	background-color: #000;
 	color: #333333;
-	height: 300px;
+	height: 100vh;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 200px 0;
