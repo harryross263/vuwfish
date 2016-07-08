@@ -57,7 +57,7 @@ img {
 	display:block;
 }
 #fish-container {
-	position: fixed;
+	position: absolute;
 }
 .active {
 	color: #fff;
@@ -93,7 +93,7 @@ a.active {
 	overflow: hidden;
 	padding: 0 0;
 }
-#info{
+#info {
 	background-color: #000;
 	color: #333333;
 	height: 100vh;
@@ -101,7 +101,7 @@ a.active {
 	overflow: hidden;
 	padding: 0 0;
 }
-#calendar{
+#calendar-div {
 	background-color: #fff;
 	color: #333333;
 	height: 100vh;
@@ -109,7 +109,7 @@ a.active {
 	overflow: hidden;
 	padding: 0 0;
 }
-#contact{
+#contact {
 	background-color: #000;
 	color: #333333;
 	height: 100vh;

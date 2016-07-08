@@ -7,9 +7,11 @@
 
 	<link rel="icon" href="img/favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/stylezzz.css">
+	<link rel="stylesheet" type="text/css" href="css/calendar.css">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.18/paper-full.min.js"></script>
+	<script type="text/javascript" src="js/jquery.calendar.js"></script>
 	<script type="text/javascript" src="js/movedemfish.js"></script>
 	<script type="text/paperscript" canvas="canvas-1">
 		// Code ported to Paper.js from http://the389.com/9/1/
@@ -133,7 +135,7 @@
 	<div id="home">
 		<a name="home"></a>
 		<div id="horizontal-menu">
-			<p><a href="#home">Home</a> - <a href="#info">Info</a> - <a href="#calendar">Calendar</a> - <a href="#contact">Contact</a></p>
+			<p><a href="#home">Home</a> - <a href="#info">Info</a> - <a href="#calendar-div">Calendar</a> - <a href="#contact">Contact</a></p>
 		</div>
 		<div id="vertical-menu">
 			<p><a href="#home">Home</a><br><a href="#info">Info</a><br><a href="#calendar">Calendar</a><br><a href="#contact">Contact</a></p>
@@ -167,8 +169,10 @@
 		<a name="info"></a>
 	</div>
 
-	<div id="calendar">
+	<div id="calendar-div">
 		<a name="calendar"></a>
+		<div id="calendar-container" style="position: relative; height: 80%; top: 20%">
+		</div>
 	</div>
 
 	<div id="contact">
@@ -200,15 +204,29 @@
 	        		'scrollTop': $target.offset().top
 	        	}, 900, function() {
 	        		if (target == '#info' || target == '#contact') {
+	        			$('#fish-container').css('display', 'block');
 	        			$('#horizontal-menu').find('*').addClass('active');
 	        			$('#vertical-menu').find('*').addClass('active');
+	        		} else if (target == '#calendar-div') {
+	        			$('#fish-container').css('display', 'none');
+	        			$('#horizontal-menu').find('*').removeClass('active');
+	        			$('#vertical-menu').find('*').removeClass('active');
 	        		} else {
+	        			$('#fish-container').css('display', 'block');
 	        			$('#horizontal-menu').find('*').removeClass('active');
 	        			$('#vertical-menu').find('*').removeClass('active');
 	        		}
 	    		});
 
 	    	});
+
+	    	$("#calendar-container").calendar({
+			tipsy_gravity: 's', // How do you want to anchor the tipsy notification? (n / s / e / w)
+			click_callback: function(date) {
+                console.log(date);
+            }, // Callback to return the clicked date object
+			scroll_to_date: false // Scroll to the current day?
+			});
 		});
 	</script>
 </body>
