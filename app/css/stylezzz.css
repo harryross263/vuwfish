@@ -48,6 +48,17 @@ img {
 	margin-top: -162px; /* Half the height */
 	margin-left: -183px; /* Half the width */
 }
+#social-medias {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	top: 50vh;
+	left: 37vw;
+}
+#social-medias-div {
+	height: 100%;
+	position: absolute;
+}
 #with-thanks {
 	position: absolute;
 	right: 90px;
